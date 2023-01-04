@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Open+Sans:wght@300;400;500;600;700;800&family=Seymour+One&display=swap');
+
+@keyframes danaAppear{
+    0% { opacity:0;}
+    10% { opacity:1; transform: none;}
+    30% {opacity: 1; transform: scale(0.5);}
+    70% {opacity: 1; transform: scale(500);}
+    100% {opacity: 1;  transform: scale(500);}
+}
+
+@keyframes appear{
+    from { opacity:0}
+    to { opacity:1}
+}
+@keyframes scaling{
+    0% {transform: scale(0)}
+    50% {transform: scale(5)}
+    100% {transform: scale(600)}
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x:hidden;
+}
+
+#tsparticles{
+    position: absolute;
+    z-index: -1;
+}
+
+.logo{
+    min-width:250px;
+    width: 15vw;
+    position: absolute;
+    top: 50px;
+    left:5vw;
+}
+
+.welcome{
+    position: absolute;
+    top:200px;
+    max-width: 90vw;
+    width: 500px;
+    margin-left: 5vw;
+    background-color: rgba(40, 44, 52, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 20px 20px #282c34;
+
+    h1{
+        color:#FBEAAB;
+        font-family: 'Seymour One', sans-serif;
+        font-size: 27px;
+        margin-bottom: 10px;
+
+    }
+    p{
+        color:#fff;
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 20px;
+    }
+    .inputWithText{
+        display: flex;
+        position: relative;
+        input{
+            font-size: 35px;
+            width: 8em;
+            font-family: 'East Sea Dokdo', cursive;
+            background-color: #282c34;
+            border: 1px solid #FBEAAB;
+            border-radius: 5px;
+            color:white;
+            padding-left: 10px;
+        }
+        p{
+            position: absolute;
+            margin-left: 11px;
+            margin-top: 1px;
+            font-size: 35px;
+            font-family: 'East Sea Dokdo', cursive;
+            color:#F3A83C;
+        }
+        .btn-gold{
+            border: 1px solid #FBEAAB;
+            border-radius: 5px;
+            background-color: #FBEAAB;
+            width: -webkit-fill-available;
+            color: #282c34;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+    .error-text{
+        color:red;
+        margin-top: 10px;
+        transition: .5s;
+    }
+    .orange-dana{
+        animation-name: danaAppear;
+        animation-duration: 5s;
+        width: max-content;
+        position: absolute;
+        // left: 50vw;
+        // top: 50vh;
+    }
+}
+.ily-container{
+    width:100vw;
+    height:100vh;
+    background-color: #F3A83C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    animation-name: appear;
+    animation-delay: 4s;
+    animation-duration: .5s;
+    opacity: 0;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+    p{
+        animation-name: scaling;
+        animation-delay: 5s;
+        animation-duration: 8s;
+        transform: scale(0);
+        font-family: 'Open Sans', sans-serif;
+        color:#282c34
+    }
+}
+
+.main{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 150;
+    background-color: #282c34;
+
+    header{
+        font-family: 'Open Sans', sans-serif;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 0;
+        top: 0;
+        h1{
+            font-weight: 300 !important;
+            color:white;
+            text-align: center;
+            max-width:80vw;
+            animation-name: appear;
+            animation-duration:2s;
+        }
+        .scroll-down{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            bottom: 50px;
+            opacity: 0;
+            animation: appear;
+            animation-delay: 2s;
+            animation-duration: 1.5s;
+            -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+            -moz-animation-fill-mode: forwards;    /* FF 5+ */
+            -o-animation-fill-mode: forwards;      /* Not implemented yet */
+            -ms-animation-fill-mode: forwards;     /* IE 10+ */
+            animation-fill-mode: forwards;         /* When the spec is finished */
+        }
+    }
+}
+
+.divanyan{
+    position:fixed;
+    bottom: 5px;
+    right: 5px;
+    color:#999;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    z-index: 999999;
+}
